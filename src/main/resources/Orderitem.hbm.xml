@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 22, 2014 12:17:26 AM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.me.spring.pojo.Orderitem" table="Orderitem">
+        <id name="orderItemId" type="int">
+            <column name="Orderitem_ID" />
+            <generator class="increment" />
+        </id>
+        <property name="pquantity" type="java.lang.Integer">
+            <column name="PQUANTITY" />
+        </property>
+        <property name="pName" type="java.lang.String" access="field">
+            <column name="PNAME" />
+        </property>
+        <property name="pCost" type="int" access="field">
+            <column name="PCOST" />
+        </property>
+        <property name="pCatagory" type="java.lang.String" access="field">
+            <column name="PCATAGORY" />
+        </property>
+        <many-to-one name="product" class="com.me.spring.pojo.Product" fetch="join">
+            <column name="PRODUCT_ID" />
+        
+        </many-to-one>
+        <set name="products" table="ORDERITEM" inverse="false" lazy="true">
+            <key>
+                <column name="ORDERITEMID" />
+            </key>
+            <element type="string">
+                <column name="PRODUCTS" />
+            </element>
+        </set>
+    </class>
+</hibernate-mapping>

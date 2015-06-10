@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 18, 2014 2:07:48 AM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.me.spring.pojo.Product" table="Product">
+        <id name="productId" type="int">
+            <column name="Product_ID" />
+            <generator class="increment"></generator>
+        </id>
+        <property name="productName" type="java.lang.String">
+            <column name="Product_name" />
+        </property>
+        <property name="productCost" type="java.lang.Integer">
+            <column name="Product_cost" />
+        </property>
+        <property name="productQuantity" type="java.lang.String">
+            <column name="Product_quantity" />
+        </property>
+        <property name="productCatagory" type="java.lang.String">
+            <column name="Product_Catagory" />
+        </property>
+    </class>
+</hibernate-mapping>

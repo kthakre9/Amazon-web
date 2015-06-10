@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 18, 2014 2:07:48 AM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.me.spring.pojo.User" table="USER">
+        <id name="userId" type="int">
+            <column name="User_ID" />
+            <generator class="increment" />
+        </id>
+        <property name="role" type="java.lang.String">
+            <column name="User_Role" />
+        </property>
+        <property name="userName" type="java.lang.String">
+            <column name="User_name" />
+        </property>
+        <property name="userPassword" type="java.lang.String">
+            <column name="User_password" />
+        </property>
+        <property name="userEmailId" type="java.lang.String">
+            <column name="User_emailID" />
+        </property>
+        <property name="userFname" type="java.lang.String">
+            <column name="User_fname" />
+        </property>
+        <property name="userLname" type="java.lang.String">
+            <column name="User_lname" />
+        </property>
+        <property name="userAddress" type="java.lang.String">
+            <column name="User_address" />
+        </property>
+        <property name="view" type="java.lang.String">
+            <column name="VIEW" />
+        </property>
+        <list name="orderList" inverse="false" table="ORDER" lazy="true">
+            <key>
+                <column name="USERID" />
+            </key>
+            <list-index></list-index>
+            <one-to-many class="com.me.spring.pojo.Order" />
+        </list>
+    </class>
+</hibernate-mapping>

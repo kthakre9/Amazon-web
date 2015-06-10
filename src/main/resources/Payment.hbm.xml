@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 18, 2014 2:07:48 AM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.me.spring.pojo.Payment" table="PAYMENT">
+        <id name="paymentId" type="int">
+            <column name="Payment_ID" />
+            <generator class="increment" />
+        </id>
+        
+        
+        <property name="paymentType" type="java.lang.String">
+            <column name="Payment_type" />
+        </property>
+        <property name="paymentcardNum" type="java.lang.String">
+            <column name="Paymentcard_num" />
+        </property>
+        <property name="expirationDate" type="java.lang.String">
+            <column name="expiration_Date" />
+        </property>
+        <property name="securityCode" type="java.lang.String">
+            <column name="security_code" />
+        </property>
+    </class>
+</hibernate-mapping>
